@@ -1,15 +1,21 @@
 'use strict';
 module.exports = function(app) {
-  let todoList = require('../controllers/controllers');
-
-  // todoList Routes
-  app.route('/api/activities')
-    .get(todoList.list_all_tasks)
-    .post(todoList.create_a_task);
+  let activityList = require('../controllers/controllers');
 
 
-  app.route('/api/activities/:taskId')
-    .get(todoList.read_a_task)
-    .put(todoList.update_a_task)
-    .delete(todoList.delete_a_task);
+  app.route('/activities')
+    .get(activityList.list_all_activities)
+    .post(activityList.create_an_activity);
+
+  app.route('/activities/:activityId')
+    .get(activityList.read_an_activity)
+    .put(activityList.update_an_activity)
+    .delete(activityList.delete_an_activity);
+
 };
+  // app.route('/api/activities/:activityId/stats')
+  //   .get(activityList.read_an_activity)
+  //   .post(activityList.add_tracked_data);
+
+//   app.route('/api/stats/:activityId')
+//     .delete(activityList.delete_a_day);

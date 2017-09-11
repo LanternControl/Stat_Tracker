@@ -3,12 +3,12 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 
-let TaskSchema = new Schema({
-  name: {
+let ActivitySchema = new Schema({
+  name_of_activity: {
     type: String,
-    required: 'Kindly enter the name of the task'
+    required: 'Enter your workout'
   },
-  Created_date: {
+  created_date: {
     type: Date,
     default: Date.now
   },
@@ -21,4 +21,4 @@ let TaskSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Tasks', TaskSchema);
+module.exports = mongoose.model('Activities', ActivitySchema);

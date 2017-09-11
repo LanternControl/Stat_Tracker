@@ -4,7 +4,7 @@
 let express = require ('express'),
   app = express(),
   mongoose = require('mongoose'),
-  Task = require('./api/models/models'), //created model loading here
+  Task = require('./api/models/models'),
   bodyParser = require('body-parser'),
   port = 3000;
 
@@ -19,7 +19,7 @@ res.status(404).send({url: req.originalUrl + ' not found'})
 });
 
 let routes = require('./api/routes/routes'); //importing route
-routes(app); //register the rout
+routes(app); //register the route
 
 app.listen(port);
 
